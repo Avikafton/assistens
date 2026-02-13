@@ -445,6 +445,11 @@ header {
   background:#e6e6e6;
 }
 
+.navbox input:focus{
+  outline:none;
+  box-shadow:0 0 0 2px #b1fbc3; /* same soft green as rest of app */
+}
+
 .swap{
   background:#3a5575;
   color:white;
