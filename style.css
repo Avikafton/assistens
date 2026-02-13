@@ -174,12 +174,10 @@ body{
 
   /* custom dropdown arrow + clean style */
   .field select{
-    appearance:none;
+    color:#000; /* force text color */
+    font-family:'Nunito';
     -webkit-appearance:none;
-    -moz-appearance:none;
-    background:#e6e6e6 url("data:image/svg+xml;utf8,<svg fill='%230e2a47' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 16px center;
-    background-size:18px;
-    cursor:pointer;
+    appearance:none;
   }
 
   /* dropdown options styling */
