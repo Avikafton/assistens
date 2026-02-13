@@ -372,33 +372,51 @@ header {
 /* ===== PERSON.HTML STYLING ===== */
 
 .person-hero h2{
-  font-size:22px;
-  margin:10px 0 20px;
+  font-size:24px;
+  margin:10px 0 18px;
 }
 
+/* portrait + intro */
 .person-layout{
   display:flex;
+  gap:20px;
   align-items:flex-start;
+  margin-bottom:20px;
 }
 
 .person-img{
-  width:160px;
+  width:150px;
   height:auto;
+  border-radius:10px;
 }
 
+/* text area now full width below */
 .person-text{
-  font-size:14px;
-  line-height:1.5;
-  max-width:200px;
+  font-size:15px;
+  line-height:1.6;
+  margin-top:10px;
+}
+
+.person-text p{
+  margin-bottom:16px;
+}
+
+/* images inside text */
+.person-poster,
+.person-poem{
+  width:100%;
+  border-radius:12px;
+  margin:18px 0;
+  display:block;
 }
 
 .follow{
-  margin-top:35px;
+  margin-top:40px;
 }
 
 .follow h2{
   font-size:20px;
-  margin-bottom:18px;
+  margin-bottom:16px;
 }
 
 /* nav route box */
