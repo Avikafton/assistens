@@ -225,22 +225,27 @@ body{
     border:none;
     border-radius:12px;
     background:#2e4b6b;
-    color:white;
+    color:white; /* force white text */
     font-weight:600;
+    font-family:'Nunito';
     cursor:pointer;
+    -webkit-appearance:none; /* fixes iPhone blue text */
   }
-  
-  .route-main{
-    width:100%;
-    margin-top:10px;
-    padding:16px;
-    border:none;
-    border-radius:16px;
-    background:#b1fbc3;
-    font-weight:700;
-    font-size:16px;
-    cursor:pointer;
-  }
+
+.route-main{
+  width:100%;
+  margin-top:10px;
+  padding:16px;
+  border:none;
+  border-radius:16px;
+  background:#b1fbc3;
+  color:#000; /* force black text */
+  font-weight:700;
+  font-family:'Nunito';
+  font-size:16px;
+  cursor:pointer;
+  -webkit-appearance:none; /* fixes iPhone styling */
+}
   
   .route-main:hover{
     transform:scale(1.02);

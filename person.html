@@ -1,134 +1,128 @@
-
-
 <!DOCTYPE html>
 <html lang="da">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dan Turèll</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dan Turèll</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="phone">
+  <div class="phone">
 
-<header>
-  <p class="collab">In collaboration with</p>
-  <img src="img/visit-logo.png" class="logoimg">
+    <header>
+      <p class="collab">In collaboration with</p>
+      <a href="index.html">
+        <img src="img/visit-logo.png" class="logoimg">
+      </a>
+      
+      <div class="menu" id="menuToggle">☰</div>
 
-  <div class="menu" id="menuToggle">☰</div>
+      <nav class="dropdown" id="dropdownMenu">
+        <div class="menu-top">
+          <span class="closeMenu" id="closeMenu">✕</span>
+        </div>
 
-  <nav class="dropdown" id="dropdownMenu">
-    <div class="menu-top">
-      <span class="closeMenu" id="closeMenu">✕</span>
+        <div class="menu-links">
+          <a href="index.html">Home</a>
+          <a href="people.html">Cultural figures</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </header>
+
+
+    <section class="person-hero">
+      <h2>Dan Turèll</h2>
+
+      <div class="person-layout">
+        <img src="img/dan-person.png" class="person-img">
+
+        <p class="person-text">
+          Dan Turèll (1946–1993), known as "Onkel Danny" (Uncle Danny), was a highly popular and prolific Danish author, poet, and journalist. Known for his distinctive style, including black-painted nails, he wrote nearly 100 books, including the famous Vangedebilleder (1975) and a popular crime series. He is celebrated for chronicling urban life, particularly in Copenhagen.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="follow">
+      <h2>Follow Dan Turèll in his footsteps</h2>
+
+      <div class="navbox">
+        <div class="inputs">
+          <input id="startInput" placeholder="I’m standing here...">
+          <input id="destInput" value="Dan Turèll">
+        </div>
+
+        <div class="swap" id="swapBtn">⇅</div>
+      </div>
+    </section>
+
+
+    <img src="img/map.png" class="map">
+
+
+
+    <div class="footer">
+      <a href="https://instagram.com" target="_blank">
+        <img src="img/instagram.png">
+      </a>
+
+      <a href="https://facebook.com" target="_blank">
+        <img src="img/facebook.png">
+      </a>
     </div>
 
-    <div class="menu-links">
-      <a href="index.html">Home</a>
-      <a href="people.html">Cultural figures</a>
-      <a href="about.html">About</a>
-    </div>
-  </nav>
-</header>
-
-
-<section class="person-hero">
-
-  <h2>Dan Turèll</h2>
-
-  <div class="person-layout">
-    <img src="img/dan-person.png" class="person-img">
-
-    <p class="person-text">
-      Dan Turèll (1946–1993), known as "Onkel Danny" (Uncle Danny), was a highly popular and prolific Danish author, poet, and journalist. Known for his distinctive style, including black-painted nails, he wrote nearly 100 books, including the famous Vangedebilleder (1975) and a popular crime series. He is celebrated for chronicling urban life, particularly in Copenhagen.
-    </p>
   </div>
 
-</section>
 
 
-<section class="follow">
-  <h2>Follow Dan Turèll in his footsteps</h2>
+  <script>
 
-  <div class="navbox">
+    /* MENU */
+    const menuBtn = document.getElementById("menuToggle");
+    const dropdown = document.getElementById("dropdownMenu");
+    const closeBtn = document.getElementById("closeMenu");
 
-    <div class="inputs">
-      <input id="startInput" placeholder="▲  I’m standing here...">
-      <input id="destInput" value="📍  Dan Turèll">
-    </div>
-
-    <div class="swap" id="swapBtn">⇅</div>
-
-  </div>
-
-</section>
-
-
-<img src="img/map.png" class="map">
-
-
-<div class="footer">
-  <a href="https://instagram.com" target="_blank">
-    <img src="img/instagram.png">
-  </a>
-
-  <a href="https://facebook.com" target="_blank">
-    <img src="img/facebook.png">
-  </a>
-</div>
-
-</div>
-
-
-<script>
-const menuBtn = document.getElementById("menuToggle");
-const dropdown = document.getElementById("dropdownMenu");
-const closeBtn = document.getElementById("closeMenu");
-
-if(menuBtn){
-  menuBtn.addEventListener("click", ()=>{
-    dropdown.classList.add("showMenu");
-  });
-}
-
-if(closeBtn){
-  closeBtn.addEventListener("click", ()=>{
-    dropdown.classList.remove("showMenu");
-  });
-}
-</script>
-
-<script>
-/* swap inputs but keep placeholder logic */
-const swapBtn = document.getElementById("swapBtn");
-const startInput = document.getElementById("startInput");
-const destInput = document.getElementById("destInput");
-
-if(swapBtn){
-  swapBtn.addEventListener("click", ()=>{
-
-    const startVal = startInput.value.trim();
-    const destVal = destInput.value.trim();
-
-    // if start is empty → move destination to start
-    if(startVal === ""){
-      startInput.value = destVal;
-      destInput.value = "";
-      destInput.placeholder = "▲  I’m standing here...";
-    }
-    // if start has destination → move back
-    else{
-      destInput.value = startVal;
-      startInput.value = "";
-      startInput.placeholder = "▲  I’m standing here...";
+    if (menuBtn) {
+      menuBtn.addEventListener("click", () => {
+        dropdown.classList.add("showMenu");
+      });
     }
 
-  });
-}
-</script>
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        dropdown.classList.remove("showMenu");
+      });
+    }
+
+
+    /* SWAP ROUTE INPUTS */
+    const swapBtn = document.getElementById("swapBtn");
+    const startInput = document.getElementById("startInput");
+    const destInput = document.getElementById("destInput");
+
+    if (swapBtn) {
+      swapBtn.addEventListener("click", () => {
+        const startVal = startInput.value.trim();
+        const destVal = destInput.value.trim();
+
+        if (startVal === "") {
+          startInput.value = destVal;
+          destInput.value = "";
+          destInput.placeholder = "I’m standing here...";
+        } else {
+          destInput.value = startVal;
+          startInput.value = "";
+          startInput.placeholder = "I’m standing here...";
+        }
+      });
+    }
+
+  </script>
 
 </body>
 </html>
