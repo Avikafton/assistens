@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="phone">
+
+    <header>
+        <p class="collab">in collaboration with</p>
+        <img src="img/visit-logo.png" class="logoimg">
+      
+        <div class="menu" id="menuToggle">☰</div>
+      
+        <nav class="dropdown" id="dropdownMenu">
+          <div class="menu-top">
+            <span class="closeMenu" id="closeMenu">✕</span>
+          </div>
+      
+          <div class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="people.html">Cultural figures</a>
+            <a href="about.html">About</a>
+          </div>
+        </nav>
+      </header>
+
+<section class="intro">
+<h2>Explore the stories and legacy of iconic names</h2>
+</section>
+
+<section class="grid">
+
+<a href="person.html" class="card">
+  <img src="img/danturell.png">
+  <p>Dan Turèll</p>
+</a>
+
+<div class="card">
+<img src="img/hcandersen.png">
+<p>H.C. Andersen</p>
+</div>
+
+<div class="card">
+<img src="img/sorenkierkegaard.png">
+<p>Søren Kierkegaard</p>
+</div>
+
+<div class="card">
+<img src="img/nielsbohr.png">
+<p>Niels Bohr</p>
+</div>
+
+<div class="card">
+<img src="img/natasja.png">
+<p>Natasja</p>
+</div>
+
+<div class="card">
+<img src="img/hcorsted.png">
+<p>H.C. Ørsted</p>
+</div>
+
+<div class="card">
+<img src="img/michaelstrunge.png">
+<p>Michael Strunge</p>
+</div>
+
+<div class="card">
+<img src="img/masterfatman.png">
+<p>Master Fatman</p>
+</div>
+
+<div class="card">
+<img src="img/hansscherfig.png">
+<p>Hans Scherfig</p>
+</div>
+
+<div class="card">
+<img src="img/ibspangolsen.png">
+<p>Ib Spang Olsen</p>
+</div>
+
+<div class="card">
+<img src="img/henryheerup.png">
+<p>Henry Heerup</p>
+</div>
+
+<div class="card">
+<img src="img/emiliesannom.png">
+<p>Emilie Sannom</p>
+</div>
+
+<div class="card single">
+<img src="img/cweckersberg.png">
+<p>C.W. Eckersberg</p>
+</div>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+const menuBtn = document.getElementById("menuToggle");
+const dropdown = document.getElementById("dropdownMenu");
+const closeBtn = document.getElementById("closeMenu");
+
+if(menuBtn){
+  menuBtn.addEventListener("click", ()=>{
+    dropdown.classList.add("showMenu");
+  });
+}
+
+if(closeBtn){
+  closeBtn.addEventListener("click", ()=>{
+    dropdown.classList.remove("showMenu");
+  });
+}
+</script>
+</body>
+</html>

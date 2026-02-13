@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assistens</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="phone">
+
+<header>
+  <p class="collab">in collaboration with</p>
+  <img src="img/visit-logo.png" class="logoimg">
+
+  <div class="menu" id="menuToggle">☰</div>
+
+  <nav class="dropdown" id="dropdownMenu">
+    <div class="menu-top">
+      <span class="closeMenu" id="closeMenu">✕</span>
+    </div>
+
+    <div class="menu-links">
+      <a href="index.html">Home</a>
+      <a href="people.html">Cultural figures</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+</header>
+
+
+<section class="intro">
+  <h2>In collaboration with Visit Copenhagen, welcome to Assistens Cemetery</h2>
+  <p class="desc">
+  — a website for those who wish to explore the final resting places of some of Denmark’s most influential cultural figures. Here, you can discover the stories and legacy of iconic names such as Hans Christian Andersen, Søren Kierkegaard and Dan Turèll, all buried at the historic Assistens Cemetery in Copenhagen.
+  </p>
+</section>
+
+
+<section class="walk">
+  <h2>Follow in the footsteps of iconic figures</h2>
+  <p class="small">A walk among Copenhagen’s cultural names</p>
+
+  <p class="desc2">
+  Explore Assistens Cemetery and discover the final resting places of some of Denmark’s most influential cultural icons. Walk through the historic paths of Nørrebro and experience the stories, legacy and impact of the writers, thinkers and artists who helped shape Copenhagen’s cultural identity.
+  </p>
+</section>
+
+
+<section class="map-ui">
+  <div class="map-card">
+
+    <div class="field">
+      <label>Destination</label>
+      <select id="personSelect">
+        <option value="">Choose a cultural figure...</option>
+        <option value="Dan Turèll grav Assistens Cemetery Copenhagen">Dan Turèll</option>
+        <option value="H.C. Andersen grav Assistens Cemetery Copenhagen">H.C. Andersen</option>
+        <option value="Søren Kierkegaard grav Assistens Cemetery Copenhagen">Søren Kierkegaard</option>
+        <option value="Niels Bohr grav Assistens Cemetery Copenhagen">Niels Bohr</option>
+        <option value="Natasja grav Assistens Cemetery Copenhagen">Natasja</option>
+        <option value="H.C. Ørsted grav Assistens Cemetery Copenhagen">H.C. Ørsted</option>
+        <option value="Michael Strunge grav Assistens Cemetery Copenhagen">Michael Strunge</option>
+        <option value="Master Fatman grav Assistens Cemetery Copenhagen">Master Fatman</option>
+        <option value="Hans Scherfig grav Assistens Cemetery Copenhagen">Hans Scherfig</option>
+        <option value="Ib Spang Olsen grav Assistens Cemetery Copenhagen">Ib Spang Olsen</option>
+        <option value="Henry Heerup grav Assistens Cemetery Copenhagen">Henry Heerup</option>
+        <option value="Emilie Sannom grav Assistens Cemetery Copenhagen">Emilie Sannom</option>
+        <option value="C.W. Eckersberg grav Assistens Cemetery Copenhagen">C.W. Eckersberg</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Your location</label>
+      <input id="start" placeholder="Use GPS or type address">
+      <button id="useLocationBtn" class="locbtn">Use my location</button>
+    </div>
+
+    <button class="route-main" id="routeBtn">Start route</button>
+
+  </div>
+</section>
+
+
+<iframe 
+  id="realMap"
+  class="map"
+  src="https://www.google.com/maps?q=Assistens%20Cemetery%20Copenhagen&output=embed"
+  width="100%" 
+  height="320"
+  style="border:0; border-radius:18px;"
+  allowfullscreen=""
+  loading="lazy">
+</iframe>
+
+
+<div class="footer">
+  <a href="https://instagram.com" target="_blank">
+    <img src="img/instagram.png">
+  </a>
+
+  <a href="https://facebook.com" target="_blank">
+    <img src="img/facebook.png">
+  </a>
+</div>
+
+</div> 
+
+
+<script src="script.js"></script>
+
+<script>
+const menuBtn = document.getElementById("menuToggle");
+const dropdown = document.getElementById("dropdownMenu");
+const closeBtn = document.getElementById("closeMenu");
+
+if(menuBtn){
+  menuBtn.addEventListener("click", ()=>{
+    dropdown.classList.add("showMenu");
+  });
+}
+
+if(closeBtn){
+  closeBtn.addEventListener("click", ()=>{
+    dropdown.classList.remove("showMenu");
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Assistens</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="phone">
+
+<header>
+  <p class="collab">in collaboration with</p>
+  <img src="img/visit-logo.png" class="logoimg">
+
+  <div class="menu" id="menuToggle">☰</div>
+
+  <nav class="dropdown" id="dropdownMenu">
+    <div class="menu-top">
+      <span class="closeMenu" id="closeMenu">✕</span>
+    </div>
+
+    <div class="menu-links">
+      <a href="index.html">Home</a>
+      <a href="people.html">Cultural figures</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+</header>
+
+
+<section class="intro">
+  <h2>About this guide</h2>
+
+  <p class="desc">
+  This digital guide to Assistens Cemetery is created in collaboration with Visit Copenhagen to help visitors explore one of the city's most historic and culturally significant places.
+  </p>
+
+  <p class="desc">
+  Assistens Cemetery in Nørrebro is not only a resting place, but also a cultural landscape where some of Denmark’s most influential writers, artists, thinkers and scientists are buried. This site invites you to discover their stories while walking through one of Copenhagen’s most unique green spaces.
+  </p>
+
+  <p class="desc">
+  Use the interactive map to navigate to each grave, learn about the people who shaped Danish culture and experience Copenhagen from a new perspective — through history, literature and art.
+  </p>
+</section>
+
+
+<section class="walk">
+  <h2>The history of Assistens</h2>
+
+  <p class="desc2">
+  Established in 1760, Assistens Cemetery quickly became the final resting place for many of Denmark’s most prominent cultural figures. Over time, it has transformed into both a cemetery and a public park, where locals and visitors alike walk, reflect and connect with the past.
+  </p>
+
+  <p class="desc2">
+  Today, the cemetery stands as a living cultural archive — a place where history, architecture and personal stories meet. Whether you come to explore famous graves or simply enjoy the peaceful surroundings, Assistens offers a unique experience in the heart of Copenhagen.
+  </p>
+</section>
+
+
+<img src="img/map.png" class="map">
+
+
+<div class="footer">
+  <a href="https://instagram.com" target="_blank">
+    <img src="img/instagram.png">
+  </a>
+
+  <a href="https://facebook.com" target="_blank">
+    <img src="img/facebook.png">
+  </a>
+</div>
+
+</div>
+
+
+<script>
+const menuBtn = document.getElementById("menuToggle");
+const dropdown = document.getElementById("dropdownMenu");
+const closeBtn = document.getElementById("closeMenu");
+
+if(menuBtn){
+  menuBtn.addEventListener("click", ()=>{
+    dropdown.classList.add("showMenu");
+  });
+}
+
+if(closeBtn){
+  closeBtn.addEventListener("click", ()=>{
+    dropdown.classList.remove("showMenu");
+  });
+}
+</script>
+
+</body>
+</html>
