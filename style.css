@@ -1,28 +1,59 @@
-body{
-    margin:0;
-    font-family:'Nunito', sans-serif;
-    background:#ffffff;
-    display:flex;
-    justify-content:center;
-  }
+/* =====================================================
+GLOBAL BASE STYLES
+===================================================== */
 
+body {
+  margin:0;
+  font-family:'Nunito', sans-serif;
+  background:#ffffff;
+  display:flex;
+  justify-content:center;
+}
 
-  h1, h2{
-    font-weight:700; 
-  }
-  
-  p{
-    font-weight:400;
-  }
-  
-  .collab{
-    font-weight:300;
-    font-size:12px;
-    margin-bottom:4px; /* pulls text closer to logo */
-  }
+h1, h2 {
+  font-weight:700;
+}
 
-/* FULLSCREEN MENU */
-.dropdown{
+p{
+  font-weight:400;
+}
+
+.collab {
+  font-weight:300;
+  font-size:12px;
+  margin-bottom:4px;
+}
+
+.phone {
+  width:390px;
+  min-height:100vh;
+  background:#e9dfcf;
+  padding:20px;
+  box-sizing:border-box;
+}
+
+header {
+  text-align:center;
+  position:relative;
+  margin-bottom:10px;
+}
+
+.logoimg {
+  width:170px;
+}
+
+.menu {
+  position:absolute;
+  right:0;
+  top:-10px;
+  font-size:36px;
+}
+
+/* =====================================================
+FULLSCREEN MENU (ALL PAGES)
+===================================================== */
+
+.dropdown {
   position:fixed;
   inset:0;
   background:#0e2a47;
@@ -32,24 +63,22 @@ body{
   padding:30px;
 }
 
-.showMenu{
+.showMenu {
   display:flex;
 }
 
-/* top bar with X */
-.menu-top{
+.menu-top {
   display:flex;
   justify-content:flex-end;
 }
 
-.closeMenu{
+.closeMenu {
   font-size:30px;
   color:white;
   cursor:pointer;
 }
 
-/* links */
-.menu-links{
+.menu-links {
   margin-top:60px;
   display:flex;
   flex-direction:column;
@@ -57,370 +86,304 @@ body{
   align-items:center;
 }
 
-.menu-links a{
+.menu-links a {
   color:white;
   text-decoration:none;
   font-size:26px;
   font-family:'Nunito';
 }
-  /* FOOTER SOCIAL MEDIA STYLING */
 
-.footer{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:18px;
-    margin-top:40px;
-    padding-bottom:20px;
-    }
-    
-    .footer a{
-    display:inline-block;
-    }
-    
-    .footer img{
-    width:40px;   /* smaller size */
-    height:35px;
-    opacity:0.85;
-    transition:0.2s;
-    }
-    
-    .footer img:hover{
-    opacity:1;
-    transform:scale(1.08);
-    }
+/* =====================================================
+FOOTER (ALL PAGES)
+===================================================== */
 
-
-  
-  /* vigtigt */
-.map{
-  position:relative;
+.footer {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  margin-top:40px;
+  padding-bottom:20px;
 }
-  
 
-/* Index */
+.footer a {
+  display:inline-block;
+}
+
+.footer img {
+  width:40px;
+  height:34px;
+  opacity:0.85;
+  transition:0.2s;
+}
+
+.footer img:hover {
+  opacity:1;
+  transform:scale(1.08);
+}
+
+/* =====================================================
+INDEX.HTML
+===================================================== */
+
+.intro h2 {
+  font-size:22px;
+}
+
+.cta-people {
+  margin:25px 0 10px;
+  text-align:center;
+}
+
+.cta-btn {
+  display:inline-block;
+  background:#0e2a47;
+  color:white;
+  padding:16px 22px;
+  border-radius:16px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:16px;
+  transition:0.2s;
+}
+
+.cta-btn:hover {
+  background:#183a63;
+  transform:scale(1.03);
+}
 
 
+.map-ui {
+  margin-top:30px;
+}
 
-/* ===== ROUTE INFO UI ===== */
+.map-card {
+  background:#0e2a47;
+  padding:20px;
+  border-radius:24px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15);
+  margin-bottom:15px;
+}
 
-#routeInfoBox{
-    position:fixed;
-    bottom:25px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:9999;
-  }
-  
-  .route-ui{
-    background:white;
-    padding:16px 20px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-    width:260px;
-    font-family:'Nunito';
-  }
-  
-  .route-top{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:6px;
-    font-size:15px;
-  }
-  
-  .route-bottom{
-    display:flex;
-    justify-content:space-between;
-    font-size:13px;
-    opacity:0.7;
-  }
-/* ===== MAP APP UI ===== */
+.field {
+  margin-bottom:18px;
+}
 
-.map-ui{
-    margin-top:30px;
-  }
-  
-  .map-card{
-    background:#0e2a47;
-    padding:20px;
-    border-radius:24px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.15);
-    margin-bottom:15px;
-  }
-  
-  .field{
-    margin-bottom:18px;
-  }
-  
-  .field label{
-    color:white;
-    font-size:13px;
-    display:block;
-    margin-bottom:6px;
-    opacity:0.8;
-  }
-  
-  .field select,
-  .field input{
-    width:100%;
-    padding:16px 18px;
-    border-radius:18px;
-    border:none;
-    font-family:'Nunito';
-    font-size:16px;
-    box-sizing:border-box;
-    background:#e6e6e6;
-  }
+.field label {
+  color:white;
+  font-size:13px;
+  display:block;
+  margin-bottom:6px;
+  opacity:0.8;
+}
 
-  /* custom dropdown arrow + clean style */
-  .field select{
-    color:#000; /* force text color */
-    font-family:'Nunito';
-    -webkit-appearance:none;
-    appearance:none;
-  }
+.field select,
+.field input {
+  width:100%;
+  padding:16px 18px;
+  border-radius:18px;
+  border:none;
+  font-family:'Nunito';
+  font-size:16px;
+  box-sizing:border-box;
+  background:#e6e6e6;
+}
 
-  /* dropdown options styling */
-  .field select option{
-    font-family:'Nunito';
-    font-size:16px;
-    padding:12px;
-    background:white;
-    color:#0e2a47;
-  }
+.field select {
+  color:#000;
+  -webkit-appearance:none;
+  appearance:none;
+}
 
-  /* selected option color (remove pink highlight) */
-  .field select option:checked{
-    background:#b1fbc3;
-    color:#0e2a47;
-  }
+.field select option {
+  font-family:'Nunito';
+  font-size:16px;
+  padding:12px;
+  background:white;
+  color:#0e2a47;
+}
 
-  /* for some browsers */
-  .field select:focus option:checked{
-    background:#b1fbc3;
-    color:#0e2a47;
-  }
+.field select option:checked {
+  background:#b1fbc3;
+  color:#0e2a47;
+}
 
-  /* hover + focus */
-  .field select:focus,
-  .field input:focus{
-    outline:none;
-    box-shadow:0 0 0 2px rgba(177,251,195,0.6);
-  }
+.field select:focus,
+.field input:focus {
+  outline:none;
+  box-shadow:0 0 0 2px rgba(177,251,195,0.6);
+}
 
-  /* Fix long GPS text field */
-  #start{
-    font-size:13px;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-  }
-  
-  .locbtn{
-    margin-top:8px;
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:12px;
-    background:#2e4b6b;
-    color:white; /* force white text */
-    font-weight:600;
-    font-family:'Nunito';
-    cursor:pointer;
-    -webkit-appearance:none; /* fixes iPhone blue text */
-  }
+#start {
+  font-size:13px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
 
-.route-main{
+.locbtn {
+  margin-top:8px;
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#2e4b6b;
+  color:#b1fbc3;
+  font-weight:600;
+  font-family:'Nunito';
+  cursor:pointer;
+  opacity:0.85;
+  transition:0.2s;
+  -webkit-appearance:none;
+}
+
+.locbtn:hover {
+  opacity:1;
+}
+
+.route-main {
   width:100%;
   margin-top:10px;
   padding:16px;
   border:none;
   border-radius:16px;
   background:#b1fbc3;
-  color:#000; /* force black text */
+  color:#000;
   font-weight:700;
   font-family:'Nunito';
   font-size:16px;
   cursor:pointer;
-  -webkit-appearance:none; /* fixes iPhone styling */
+  -webkit-appearance:none;
 }
-  
-  .route-main:hover{
-    transform:scale(1.02);
-  }
 
-.phone {
-    width:390px;
-    min-height:100vh;
-    background:#e9dfcf;
-    padding:20px;
-    box-sizing:border-box;
+.route-main:hover {
+  transform:scale(1.02);
 }
-  
-header {
-    text-align:center;
-    position:relative;
-    margin-bottom:10px; /* less space under header */
-}
-  
-.logo {
-    font-size:22px;
-    font-weight:bold;
-    margin:0;
-}
-  
-.menu {
-    position:absolute;
-    right:0;
-    top:-10px;
-    font-size:36px;
-}
-  
-.intro h2 {
-    font-weight:700; 
-    font-size:22px;
-  }
-  
-
-.search-box {
-    background:#0e2a47;
-    padding:15px;
-    border-radius:18px;
-    margin:20px 0;
-}
-  
-.search-box input {
-    width:100%;
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    margin-bottom:10px;
-}
-  
-
-.grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-}
-  
-.card {
-    background:#0e2a47;
-    color:white;
-    padding:25px 10px;
-    border-radius:18px;
-    text-align:center;
-    font-weight:bold;
-    cursor:pointer;
-}
-  
 
 .map {
-    width:100%;
-    margin-top:20px;
-    border-radius:12px;
+  width:100%;
+  margin-top:20px;
+  border-radius:12px;
+  position:relative;
 }
 
-
-
-
-
-
-
-/* PEOPLE.HTML - STYLING */
-
-.logoimg {
-    width:170px;
-    margin-top:0px;
+#routeInfoBox {
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:9999;
 }
-  
+
+.route-ui {
+  background:white;
+  padding:16px 20px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  width:260px;
+}
+
+.route-top {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:6px;
+  font-size:15px;
+}
+
+.route-bottom {
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  opacity:0.7;
+}
+
+/* =====================================================
+PEOPLE.HTML
+===================================================== */
+
 .grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:22px;
-    margin-top:30px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  margin-top:30px;
 }
-  
-.card{
+
+.card {
   background:#06203B;
   border-radius:22px;
   padding:12px;
   text-align:center;
   color:white;
-  text-decoration:none;   /* ← fjerner streg */
+  text-decoration:none;
 }
-  
+
 .card img {
-    width:100%;
-    height:85px;
-    object-fit:cover;
-    object-position: bottom;  
-    border-radius:12px;
-    background:white;
+  width:100%;
+  height:85px;
+  object-fit:cover;
+  object-position:bottom;
+  border-radius:12px;
+  background:white;
 }
-  
+
 .card p {
-    margin:10px 0 5px;
-    font-size:12px;
+  margin:10px 0 5px;
+  font-size:12px;
 }
-  
+
 .single {
-    grid-column:1/2;
+  grid-column:1/2;
 }
 
+/* =====================================================
+PERSON.HTML
+===================================================== */
 
-/* ===== PERSON.HTML STYLING ===== */
-
-.person-hero h2{
+.person-hero h2 {
   font-size:24px;
   margin:10px 0 18px;
 }
 
-/* portrait + intro */
-.person-layout{
+.person-layout {
   display:flex;
   gap:20px;
   align-items:flex-start;
   margin-bottom:20px;
 }
 
-.person-img{
+.person-img {
   width:150px;
-  height:auto;
   border-radius:10px;
 }
 
-/* text area now full width below */
-.person-text{
+.person-text {
   font-size:15px;
   line-height:1.6;
   margin-top:10px;
 }
 
-.person-text p{
+.person-text p {
   margin-bottom:16px;
 }
 
-/* images inside text */
 .person-poster,
-.person-poem{
+.person-poem {
   width:100%;
   border-radius:12px;
   margin:18px 0;
   display:block;
 }
 
-.follow{
+.follow {
   margin-top:40px;
 }
 
-.follow h2{
+.follow h2 {
   font-size:20px;
   margin-bottom:16px;
 }
 
-/* nav route box */
-.navbox{
+.navbox {
   background:#0e2a47;
   padding:18px;
   border-radius:22px;
@@ -430,14 +393,14 @@ header {
   margin-bottom:25px;
 }
 
-.navbox .inputs{
+.navbox .inputs {
   display:flex;
   flex-direction:column;
   gap:10px;
   width:80%;
 }
 
-.navbox input{
+.navbox input {
   padding:12px 14px;
   border-radius:12px;
   border:none;
@@ -445,15 +408,24 @@ header {
   background:#e6e6e6;
 }
 
-.navbox input:focus{
+.navbox input:focus {
   outline:none;
-  box-shadow:0 0 0 2px #b1fbc3; /* same soft green as rest of app */
+  box-shadow:0 0 0 2px #b1fbc3;
 }
 
-.swap{
+.swap {
   background:#3a5575;
   color:white;
   padding:12px 14px;
   border-radius:12px;
   font-size:18px;
+}
+
+/* =====================================================
+ABOUT.HTML
+===================================================== */
+
+.cta-about{
+  text-align:center;
+  margin:30px 0;
 }

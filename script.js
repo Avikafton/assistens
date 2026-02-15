@@ -1,13 +1,19 @@
 console.log("App virker 🔥");
 
-/* ===== ELEMENTS ===== */
+/* =====================================================
+GLOBAL ELEMENTS 
+===================================================== */
+
 const routeBtn = document.getElementById("routeBtn");
 const personSelect = document.getElementById("personSelect");
 const startInput = document.getElementById("start");
 const useLocationBtn = document.getElementById("useLocationBtn");
 const realMap = document.getElementById("realMap");
 
-/* ===== MAP OVERLAY LAYER ===== */
+/* =====================================================
+MAP OVERLAY LAYER (INDEX)
+===================================================== */
+
 let mapOverlay = document.getElementById("mapOverlay");
 
 if(!mapOverlay && realMap){
@@ -17,7 +23,10 @@ if(!mapOverlay && realMap){
   realMap.parentElement.appendChild(mapOverlay);
 }
 
-/* ===== GRAVE COORDINATES ===== */
+/* =====================================================
+GRAVE COORDINATES (INDEX + PERSON NAVIGATION)
+===================================================== */
+
 const graveCoords = {
   "Dan Turèll grav Assistens Cemetery Copenhagen": "55.6867,12.5483",
   "H.C. Andersen grav Assistens Cemetery Copenhagen": "55.6863,12.5479",
@@ -34,7 +43,11 @@ const graveCoords = {
   "C.W. Eckersberg grav Assistens Cemetery Copenhagen": "55.6873,12.5484"
 };
 
-/* ===== ZOOM MAP WHEN PERSON CHOSEN ===== */
+/* =====================================================
+INDEX PAGE — MAP INTERACTION
+===================================================== */
+
+/* Zoom map when person chosen */
 if(personSelect){
   personSelect.addEventListener("change", ()=>{
     const selected = personSelect.value;
@@ -46,7 +59,10 @@ if(personSelect){
   });
 }
 
-/* ===== USE MY LOCATION BUTTON ===== */
+/* =====================================================
+INDEX — USE MY LOCATION
+===================================================== */
+
 function getUserLocation(){
   if(!navigator.geolocation){
     alert("Location not supported");
@@ -64,6 +80,7 @@ function getUserLocation(){
     if(realMap){
       realMap.src = `https://www.google.com/maps?q=${lat},${lng}&z=16&output=embed`;
     }
+
     showUserDot(lat, lng);
   },
   ()=>{
@@ -75,7 +92,10 @@ if(useLocationBtn){
   useLocationBtn.addEventListener("click", getUserLocation);
 }
 
-/* ===== START ROUTE BUTTON ===== */
+/* =====================================================
+INDEX — START ROUTE BUTTON
+===================================================== */
+
 if(routeBtn){
   routeBtn.addEventListener("click", ()=>{
 
@@ -87,7 +107,6 @@ if(routeBtn){
       return;
     }
 
-    // If user hasn't typed start → use GPS
     if(start === ""){
       if(!navigator.geolocation){
         alert("Location not supported");
@@ -103,8 +122,8 @@ if(routeBtn){
         if(realMap){
           realMap.src = url;
         }
+
         addGravePins();
-        /* ===== FAKE MAPS INFO PANEL ===== */
         showRouteInfo(destination, start);
       });
 
@@ -115,25 +134,23 @@ if(routeBtn){
     if(realMap){
       realMap.src = url;
     }
+
     addGravePins();
-    /* ===== FAKE MAPS INFO PANEL ===== */
     showRouteInfo(destination, start);
   });
 }
 
-
-/* ===== TOURIST APP ROUTE INFO (FAKE MAPS PRO) ===== */
+/* =====================================================
+INDEX — ROUTE INFO BOX (FAKE MAPS UI)
+===================================================== */
 
 function showRouteInfo(destination, start){
 
-  // remove old box if exists
   let old = document.getElementById("routeInfoBox");
   if(old) old.remove();
 
-  /* ===== REAL DISTANCE + WALK TIME ===== */
-
   function haversine(lat1, lon1, lat2, lon2){
-    const R = 6371; // km
+    const R = 6371;
     const dLat = (lat2 - lat1) * Math.PI/180;
     const dLon = (lon2 - lon1) * Math.PI/180;
 
@@ -160,8 +177,6 @@ function showRouteInfo(destination, start){
 
     const km = haversine(startLat, startLng, destLat, destLng);
     const meters = Math.round(km * 1000);
-
-    // avg walking speed 5km/h
     const minutes = Math.max(1, Math.round((km / 5) * 60));
 
     if(meters < 1000){
@@ -196,7 +211,10 @@ function showRouteInfo(destination, start){
   document.body.appendChild(box);
 }
 
-/* ===== USER LOCATION DOT ===== */
+/* =====================================================
+INDEX — USER DOT + PINS
+===================================================== */
+
 function showUserDot(){
   if(!mapOverlay) return;
 
@@ -208,11 +226,9 @@ function showUserDot(){
   mapOverlay.appendChild(dot);
 }
 
-/* ===== GRAVE PINS ===== */
 function addGravePins(){
   if(!mapOverlay) return;
 
-  // clear old pins
   document.querySelectorAll(".gravePin").forEach(p=>p.remove());
 
   Object.keys(graveCoords).forEach(name=>{
@@ -223,7 +239,10 @@ function addGravePins(){
   });
 }
 
-/* ===== SMOOTH MAP ZOOM ANIMATION ===== */
+/* =====================================================
+INDEX — SMOOTH MAP ZOOM
+===================================================== */
+
 function smoothZoom(newSrc){
   if(!realMap) return;
 
@@ -235,3 +254,4 @@ function smoothZoom(newSrc){
     realMap.style.transform = "scale(1)";
   },300);
 }
+
