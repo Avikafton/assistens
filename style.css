@@ -478,7 +478,7 @@ circle:hover{
   text-align:left;
   display:none;
   z-index:9999;
-  pointer-events:none;
+  pointer-events:auto;
   word-wrap:break-word;
   overflow-wrap:break-word;
 }
@@ -510,7 +510,7 @@ circle:hover{
 }
 
 #closeInfo:hover{
-  background:#1e4f86;
+  background:#b1fbc3;
   transform:scale(1.08);
 }
 

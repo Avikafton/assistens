@@ -255,60 +255,100 @@ His grave at Assistens Cemetery has become a cultural landmark, visited by reade
 <script>
 const menuBtn = document.getElementById("menuToggle");
 const dropdown = document.getElementById("dropdownMenu");
-const closeBtn = document.getElementById("closeMenu");
+const closeMenu = document.getElementById("closeMenu");
 
 menuBtn.onclick = ()=> dropdown.classList.add("showMenu");
-closeBtn.onclick = ()=> dropdown.classList.remove("showMenu");
+closeMenu.onclick = ()=> dropdown.classList.remove("showMenu");
+
 
 const infoBox = document.getElementById("infoBox");
 const infoContent = document.getElementById("infoContent");
 const closeInfo = document.getElementById("closeInfo");
-let open = false;
 
-fetch("facts.json")
-.then(r=>r.json())
-.then(data=>{
+let active = null;
+let selected = null;
+let selectedId = null;
+let fillcolor = null;
 
-data.forEach(fact=>{
-const dot = document.getElementById(fact.id);
-if(!dot) return;
+const info = [
+  {
+    id: "f1",
+    titel: "Barndom i Vangede",
+    tekst: "Dan Turèll voksede op i Vangede nord for København. Hans barndom og ungdom her blev senere en stor inspiration for hans tekster om byen og hverdagslivet."
+  },
+  {
+    id: "f2",
+    titel: "Forfatter og journalist",
+    tekst: "Turèll skrev både digte, romaner og journalistik. Han blandede ofte genrer og skabte sin helt egen stil inspireret af jazz og beatpoesi."
+  },
+  {
+    id: "f3",
+    titel: "Kærlighed til København",
+    tekst: "København var centrum i mange af Turèlls værker. Han beskrev byens gader, mennesker og natteliv med stor kærlighed og detaljerigdom."
+  },
+  {
+    id: "f4",
+    titel: "Onkel Danny",
+    tekst: "Dan Turèll blev kendt som 'Onkel Danny' og blev en kultfigur i dansk kultur. Hans stemme og stil gjorde ham til en af Danmarks mest genkendelige forfattere."
+  },
+  {
+    id: "f5",
+    titel: "Assistens Kirkegård",
+    tekst: "Dan Turèll er begravet på Assistens Kirkegård på Nørrebro. Hans grav besøges stadig af fans og læsere fra hele verden."
+  }
+];
 
-dot.addEventListener("mouseenter", ()=>{
-if(window.innerWidth > 768){
-infoBox.style.display="block";
-infoContent.innerHTML=fact.tekst;
-open=true;
+
+const svgWrapper = document.querySelector(".svg-wrapper");
+svgWrapper.addEventListener("click", clicked);
+
+closeInfo.addEventListener("click", () => {
+  infoBox.style.display = "none";
+
+  if (active) {
+    active.setAttribute("fill", "#80272D");
+    active = null;
+  }
+});
+
+function clicked(evt) {
+  if (evt.target.closest("#infoBox")) return;
+
+  const circle = evt.target.closest("circle");
+  if (!circle) return;
+
+  selected = circle;
+  selectedId = selected.id;
+
+ 
+  if (active && active.id === selectedId) {
+    selected.setAttribute("fill", "#80272D");
+    infoBox.style.display = "none";
+    active = null;
+    return;
+  }
+
+  fillcolor = selected.getAttribute("fill");
+
+  const place = info.find(item => item.id === selectedId);
+
+  if (place) {
+    infoContent.innerHTML = `<h3>${place.titel}</h3><p>${place.tekst}</p>`;
+    infoBox.style.display = "block";
+  }
+
+  if (active) {
+    active.setAttribute("fill", "#80272D");
+  }
+
+  active = selected;
+
+  if (fillcolor === "#80272D") {
+    selected.setAttribute("fill", "#123456");
+  } else {
+    selected.setAttribute("fill", "#80272D");
+  }
 }
-});
-
-dot.addEventListener("mouseleave", ()=>{
-if(window.innerWidth > 768){
-infoBox.style.display="none";
-open=false;
-}
-});
-
-dot.addEventListener("click",(e)=>{
-e.stopPropagation();
-infoBox.style.display="block";
-infoContent.innerHTML=fact.tekst;
-open=true;
-});
-});
-
-closeInfo.addEventListener("click", ()=>{
-infoBox.style.display="none";
-open=false;
-});
-
-document.addEventListener("click",(e)=>{
-if(!e.target.closest("#infoBox") && open){
-infoBox.style.display="none";
-open=false;
-}
-});
-
-});
 </script>
 
 </body>
