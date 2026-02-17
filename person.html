@@ -304,15 +304,11 @@
     
         const dot = document.getElementById(fact.id);
     
-        if(!dot) return; // hvis id ikke findes
+        if(!dot) return; 
     
-        dot.addEventListener("mouseenter", (e)=>{
+        dot.addEventListener("mouseenter", ()=>{
           infoBox.style.display = "block";
           infoBox.innerHTML = fact.tekst;
-    
-          // placering ved mus
-          infoBox.style.left = e.pageX + 20 + "px";
-          infoBox.style.top = e.pageY - 40 + "px";
         });
     
         dot.addEventListener("mouseleave", ()=>{

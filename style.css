@@ -30,6 +30,7 @@ p{
   background:#e9dfcf;
   padding:20px;
   box-sizing:border-box;
+  position:relative;
 }
 
 header {
@@ -462,14 +463,26 @@ circle:hover{
 
 #infoBox{
   position:absolute;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%, -50%) !important;
+
   background:white;
-  padding:16px 18px;
-  border-radius:16px;
-  box-shadow:0 12px 35px rgba(0,0,0,0.25);
-  width:230px;
-  font-size:14px;
+  padding:18px 20px;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+
+  width:70%;
+  max-width:260px;
+
+  font-size:15px;
   line-height:1.5;
+  text-align:left;
+
   display:none;
   z-index:9999;
   pointer-events:none;
+
+  word-wrap:break-word;
+  overflow-wrap:break-word;
 }
