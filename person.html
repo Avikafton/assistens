@@ -41,10 +41,11 @@
 <div class="person-text">
 
 <p>
-Dan Turèll (1946–1993), known as "Onkel Danny", was a Danish author and poet known for writing about Copenhagen.
+Dan Turèll (1946–1993), known as "Onkel Danny", was a highly popular Danish author, poet and journalist. Known for his distinctive style and love for Copenhagen, he became one of Denmark’s most recognisable literary voices.
 </p>
 
 <div class="svg-wrapper">
+
     <?xml version="1.0" encoding="iso-8859-1"?>
     <!-- Generator: Adobe Illustrator 30.1.0, SVG Export Plug-In . SVG Version: 9.03 Build 0)  -->
     <svg version="1.1" id="Lag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -198,15 +199,62 @@ Dan Turèll (1946–1993), known as "Onkel Danny", was a Danish author and poet 
     </g>
     </svg>
 
-<div id="infoBox"></div>
+<div id="infoBox">
+<button id="closeInfo">✕</button>
+<div id="infoContent"></div>
 </div>
+
+</div>
+
+<p>
+Born and raised in Vangede, Turèll wrote extensively about Copenhagen and everyday city life. His works blended poetry, reportage and personal reflection, creating a unique voice that captured the rhythm of the Danish capital. He published nearly 100 books during his lifetime.
+</p>
+
+<img src="img/dan-poster.png" class="person-poster">
+
+<p>
+Turèll was deeply inspired by American beat poetry and jazz culture. Today he remains an iconic figure in Danish cultural history — celebrated for his vivid portrayal of Copenhagen’s streets, people and nightlife.
+</p>
+
+<img src="img/dan-digt.png" class="person-poem">
+
+<p>
+His grave at Assistens Cemetery has become a cultural landmark, visited by readers from around the world who continue to follow in the footsteps of “Onkel Danny”.
+</p>
 
 </div>
 </section>
 
+
+<section class="follow">
+<h2>Follow Dan Turèll in his footsteps</h2>
+
+<div class="navbox">
+<div class="inputs">
+<input id="startInput" placeholder="I’m standing here...">
+<input id="destInput" value="Dan Turèll">
 </div>
 
+<div class="swap" id="swapBtn">⇅</div>
+</div>
+</section>
+
+
+<div class="footer">
+<a href="https://instagram.com" target="_blank">
+<img src="img/instagram.png">
+</a>
+
+<a href="https://facebook.com" target="_blank">
+<img src="img/facebook.png">
+</a>
+</div>
+
+</div>
+
+
 <script>
+// menu
 const menuBtn = document.getElementById("menuToggle");
 const dropdown = document.getElementById("dropdownMenu");
 const closeBtn = document.getElementById("closeMenu");
@@ -215,8 +263,12 @@ menuBtn.onclick = ()=> dropdown.classList.add("showMenu");
 closeBtn.onclick = ()=> dropdown.classList.remove("showMenu");
 </script>
 
+
 <script>
+// INFOBOX SYSTEM
 const infoBox = document.getElementById("infoBox");
+const infoContent = document.getElementById("infoContent");
+const closeInfo = document.getElementById("closeInfo");
 let open = false;
 
 fetch("facts.json")
@@ -227,11 +279,11 @@ data.forEach(fact=>{
 const dot = document.getElementById(fact.id);
 if(!dot) return;
 
-// DESKTOP hover
+// desktop hover
 dot.addEventListener("mouseenter", ()=>{
 if(window.innerWidth > 768){
 infoBox.style.display="block";
-infoBox.innerHTML=fact.tekst;
+infoContent.innerHTML=fact.tekst;
 open=true;
 }
 });
@@ -243,18 +295,24 @@ open=false;
 }
 });
 
-// MOBILE click
+// mobile tap
 dot.addEventListener("click",(e)=>{
 e.stopPropagation();
 infoBox.style.display="block";
-infoBox.innerHTML=fact.tekst;
+infoContent.innerHTML=fact.tekst;
 open=true;
 });
 });
 
+// close on X
+closeInfo.addEventListener("click", ()=>{
+infoBox.style.display="none";
+open=false;
+});
+
 // click outside closes
 document.addEventListener("click",(e)=>{
-if(!e.target.closest("circle") && open){
+if(!e.target.closest("#infoBox") && open){
 infoBox.style.display="none";
 open=false;
 }

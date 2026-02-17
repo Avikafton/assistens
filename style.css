@@ -486,3 +486,43 @@ circle:hover{
   word-wrap:break-word;
   overflow-wrap:break-word;
 }
+
+/* TEXT */
+#infoContent{
+  font-size:15px;
+  line-height:1.5;
+  color:#222;
+  margin-top:6px;
+}
+
+/* X BUTTON */
+#closeInfo{
+  position:absolute;
+  top:10px;
+  right:12px;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  border:none;
+  background:#0e2a47;
+  color:white;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.2s;
+}
+
+#closeInfo:hover{
+  background:#1e4f86;
+  transform:scale(1.08);
+}
+
+/* fade animation */
+@keyframes fadeIn{
+  from{opacity:0; transform:translate(-50%,-40%);}
+  to{opacity:1; transform:translate(-50%,-50%);}
+}
+
