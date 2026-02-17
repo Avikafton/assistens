@@ -464,31 +464,25 @@ circle:hover{
 #infoBox{
   position:absolute;
   left:50% !important;
-  top:38% !important; /* moves box higher on screen */
+  top:38% !important; 
   transform:translate(-50%, -50%) !important;
-
   background:white;
-  padding:48px 22px 22px 22px; /* extra space at top for X and breathing room */
+  padding:48px 22px 22px 22px; 
   border-radius:18px;
-  min-height:140px; /* makes box taller at the top */
+  min-height:140px; 
   box-shadow:0 15px 40px rgba(0,0,0,0.25);
-
   width:70%;
   max-width:260px;
-
   font-size:15px;
   line-height:1.5;
   text-align:left;
-
   display:none;
   z-index:9999;
   pointer-events:none;
-
   word-wrap:break-word;
   overflow-wrap:break-word;
 }
 
-/* TEXT */
 #infoContent{
   font-size:15px;
   line-height:1.5;
@@ -496,7 +490,6 @@ circle:hover{
   margin-top:6px;
 }
 
-/* X BUTTON */
 #closeInfo{
   position:absolute;
   top: 20px;
@@ -521,7 +514,6 @@ circle:hover{
   transform:scale(1.08);
 }
 
-/* fade animation */
 @keyframes fadeIn{
   from{opacity:0; transform:translate(-50%,-40%);}
   to{opacity:1; transform:translate(-50%,-50%);}

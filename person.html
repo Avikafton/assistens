@@ -47,7 +47,6 @@ Dan Turèll (1946–1993), known as "Onkel Danny", was a highly popular Danish a
 <div class="svg-wrapper">
 
     <?xml version="1.0" encoding="iso-8859-1"?>
-    <!-- Generator: Adobe Illustrator 30.1.0, SVG Export Plug-In . SVG Version: 9.03 Build 0)  -->
     <svg version="1.1" id="Lag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 1296 1728" style="enable-background:new 0 0 1296 1728;" xml:space="preserve">
     <g id="Lag_1_00000163044321470490631240000007087860422950257048_">
@@ -254,18 +253,13 @@ His grave at Assistens Cemetery has become a cultural landmark, visited by reade
 
 
 <script>
-// menu
 const menuBtn = document.getElementById("menuToggle");
 const dropdown = document.getElementById("dropdownMenu");
 const closeBtn = document.getElementById("closeMenu");
 
 menuBtn.onclick = ()=> dropdown.classList.add("showMenu");
 closeBtn.onclick = ()=> dropdown.classList.remove("showMenu");
-</script>
 
-
-<script>
-// INFOBOX SYSTEM
 const infoBox = document.getElementById("infoBox");
 const infoContent = document.getElementById("infoContent");
 const closeInfo = document.getElementById("closeInfo");
@@ -279,7 +273,6 @@ data.forEach(fact=>{
 const dot = document.getElementById(fact.id);
 if(!dot) return;
 
-// desktop hover
 dot.addEventListener("mouseenter", ()=>{
 if(window.innerWidth > 768){
 infoBox.style.display="block";
@@ -295,7 +288,6 @@ open=false;
 }
 });
 
-// mobile tap
 dot.addEventListener("click",(e)=>{
 e.stopPropagation();
 infoBox.style.display="block";
@@ -304,13 +296,11 @@ open=true;
 });
 });
 
-// close on X
 closeInfo.addEventListener("click", ()=>{
 infoBox.style.display="none";
 open=false;
 });
 
-// click outside closes
 document.addEventListener("click",(e)=>{
 if(!e.target.closest("#infoBox") && open){
 infoBox.style.display="none";
