@@ -339,6 +339,7 @@ PEOPLE.HTML
 PERSON.HTML
 ===================================================== */
 
+
 .person-hero h2 {
   font-size:24px;
   margin:10px 0 18px;
@@ -421,6 +422,8 @@ PERSON.HTML
   font-size:18px;
 }
 
+
+
 /* =====================================================
 ABOUT.HTML
 ===================================================== */
@@ -428,4 +431,45 @@ ABOUT.HTML
 .cta-about{
   text-align:center;
   margin:30px 0;
+}
+
+/* =====================================================
+INTERACTIVE SVG – DAN TURELL HOVER FACTS
+===================================================== */
+
+.svg-wrapper{
+  position:relative;
+  width:100%;
+  margin-top:20px;
+}
+
+.svg-wrapper svg{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+circle{
+  cursor:pointer;
+  transition:0.25s;
+}
+
+circle:hover{
+  fill:#0e2a47!important; 
+  transform:translateY(-2px);
+  transform-origin:center;
+}
+
+#infoBox{
+  position:absolute;
+  background:white;
+  padding:16px 18px;
+  border-radius:16px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.25);
+  width:230px;
+  font-size:14px;
+  line-height:1.5;
+  display:none;
+  z-index:9999;
+  pointer-events:none;
 }

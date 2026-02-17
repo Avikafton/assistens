@@ -1,0 +1,27 @@
+[
+  {
+    "id":"f1",
+    "tekst":"Dan Turèll (1946-1993) was a Danish author known for his black clothing and distinctive appearance. He became an icon in Danish culture and literature.",
+    "billede":"turell1"
+  },
+  {
+    "id":"f2",
+    "tekst":"He grew up in Vangede and later wrote the famous book 'Vangede Pictures', where he described his childhood and upbringing.",
+    "billede":"turell2"
+  },
+  {
+    "id":"f3",
+    "tekst":"Dan Turèll wrote poetry, essays, and crime novels. His most famous crime series follows a journalist and became very popular in Denmark.",
+    "billede":"turell3"
+  },
+  {
+    "id":"f4",
+    "tekst":"He was inspired by American Beat poetry and writers such as Jack Kerouac and Allen Ginsberg.",
+    "billede":"turell4"
+  },
+  {
+    "id":"f5",
+    "tekst":"Dan Turèll died in 1993, but his works are still read today and he is considered one of Denmark’s most important modern authors.",
+    "billede":"turell5"
+  }
+]
