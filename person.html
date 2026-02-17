@@ -333,7 +333,7 @@ function clicked(evt) {
   const place = info.find(item => item.id === selectedId);
 
   if (place) {
-    infoContent.innerHTML = `<h3>${place.titel}</h3><p>${place.tekst}</p>`;
+    infoContent.innerHTML = `<p>${place.tekst}</p>`;
     infoBox.style.display = "block";
   }
 
