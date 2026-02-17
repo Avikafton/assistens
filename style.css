@@ -492,26 +492,21 @@ circle:hover{
 
 #closeInfo{
   position:absolute;
-  top: 20px;
-  right:12px;
-  width:30px;
-  height:30px;
-  border-radius:50%;
+  top:14px;
+  right:14px;
+  background:none;
   border:none;
-  background:#0e2a47;
-  color:white;
-  font-size:16px;
+  color:#0e2a47;
+  font-size:22px;
   font-weight:700;
   cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:0.2s;
+  padding:0;
+  line-height:1;
 }
 
 #closeInfo:hover{
-  background:#b1fbc3;
-  transform:scale(1.08);
+  color:#183a63;
+  transform:scale(1.1);
 }
 
 @keyframes fadeIn{
